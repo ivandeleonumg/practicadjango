@@ -17,11 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include 
-from Ventas.views import VentasView
+from Ventas.views import VentasView, about, bienvenida, buscar,listadoventas
 
 
 app_name    = 'ventas'
 
 urlpatterns = [
     path('',VentasView.as_view(),name='ventaslist'),
+    path('about/',about, name='about'),
+    path('bienvenida/', bienvenida, name='bienvenida'),
+    path('buscar/<str:nombre>/',buscar, name='buscar'),
+    path('listadoventas/', listadoventas, name='listadoventas'),
 ]
